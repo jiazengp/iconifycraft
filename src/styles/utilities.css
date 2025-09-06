@@ -1,0 +1,94 @@
+/* 实用工具类 */
+
+/* 布局工具 */
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.duration-300 {
+  animation-duration: 300ms;
+}
+
+/* 动画工具类 */
+.fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.slide-in-from-right-4 {
+  animation: slide-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* Slide Enter 动画系列 */
+.slide-enter {
+  animation: slide-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-enter-left {
+  animation: slide-enter-left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-enter-right {
+  animation: slide-enter-right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-enter-scale {
+  animation: slide-enter-scale 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content-enter {
+  animation: content-enter 0.3s ease-out;
+}
+
+/* 交互状态 */
+.interactive {
+  transition: all 0.2s ease-in-out;
+}
+
+.interactive:hover {
+  transform: translateY(-1px);
+}
+
+.interactive:active {
+  transform: translateY(0);
+}
+
+/* 卡片效果 */
+.card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+html.dark .card-hover:hover {
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* 焦点样式 */
+.focus-ring:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(113, 113, 122, 0.4);
+}

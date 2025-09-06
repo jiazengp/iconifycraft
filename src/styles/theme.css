@@ -1,0 +1,100 @@
+/* Minecraft 风格主题系统 - CSS 变量定义 */
+@layer base {
+  :root {
+    /* Light Mode 基础颜色 (保持现有) */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+
+    /* Minecraft 品牌色彩定义 */
+    --minecraft-green-primary: 88 50% 45%; /* #70B237 RYB Green */
+    --minecraft-green-dark: 88 65% 25%; /* #477A1E Sap Green */
+    --minecraft-green-light: 88 45% 65%; /* #8FCA5C Dollar Bill */
+    --minecraft-brown-dark: 25 65% 25%; /* #61371F Liver */
+    --minecraft-brown-medium: 25 50% 35%; /* #854F2B Milk Chocolate */
+    --minecraft-brown-light: 25 45% 50%; /* #C28340 Peru */
+  }
+
+  .dark {
+    /* Dark Mode - 恢复原有设计颜色，保留主题系统 */
+    --background: 240 10% 3.9%; /* 深色背景 */
+    --foreground: 0 0% 98%; /* 浅色文字 */
+
+    --card: 240 5.88% 10%; /* #18181b zinc-900 卡片背景 */
+    --card-foreground: 210 40% 98%; /* 卡片文字 */
+
+    --popover: 240 5.88% 10%; /* #18181b zinc-900 弹出层背景 */
+    --popover-foreground: 210 40% 98%; /* 弹出层文字 */
+
+    --primary: 210 40% 98%; /* 浅色主色 */
+    --primary-foreground: 222.2 47.4% 11.2%; /* 主色文字 */
+
+    --secondary: 240 4% 16%; /* zinc-800 次级颜色 - 纯灰色 */
+    --secondary-foreground: 0 0% 98%; /* 次级颜色文字 - 纯白 */
+
+    --muted: 240 4% 16%; /* zinc-800 静音色 - 纯灰色 */
+    --muted-foreground: 240 5% 64.9%; /* zinc-400 静音文字 - 纯灰色 */
+
+    --accent: 240 4% 16%; /* zinc-800 强调色 - 纯灰色 */
+    --accent-foreground: 0 0% 98%; /* 强调色文字 - 纯白 */
+
+    --destructive: 0 75% 50%; /* 危险色 */
+    --destructive-foreground: 0 0% 98%; /* 危险色文字 */
+
+    --border: 240 4% 16%; /* zinc-800 边框颜色 - 纯灰色 */
+    --input: 240 4% 16%; /* zinc-800 输入框背景 - 纯灰色 */
+    --ring: 240 5% 64.9%; /* zinc-400 焦点环颜色 - 纯灰色 */
+
+    /* 骨架屏专用颜色 */
+    --skeleton-bg: 240 4% 16%; /* zinc-700 骨架屏背景 - 纯灰色 */
+    --skeleton-highlight: 240 5% 22%; /* 骨架屏高亮 - 纯灰色 */
+
+    /* 交互状态颜色 */
+    --hover-bg: 240 4% 16%; /* zinc-700 悬停背景 - 纯灰色 */
+    --hover-border: 240 5% 64.9%; /* zinc-400 悬停边框 - 纯灰色 */
+    --focus-ring: 240 5% 64.9%; /* zinc-400 焦点环 - 纯灰色 */
+    --active-bg: 240 4% 16%; /* zinc-700 激活背景 - 纯灰色 */
+  }
+
+  /* 全局焦点样式更新 */
+  .focus-ring:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px hsl(var(--focus-ring) / 0.4);
+  }
+
+  /* 选择文本样式更新 */
+  ::selection {
+    background-color: hsl(var(--primary) / 0.15);
+    color: inherit;
+  }
+
+  html.dark ::selection {
+    background-color: hsl(var(--minecraft-green-primary) / 0.25);
+  }
+}

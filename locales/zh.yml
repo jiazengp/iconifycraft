@@ -1,0 +1,797 @@
+button:
+  about: 关于
+  back: 返回
+  go: 确定
+  home: 首页
+  toggle_dark: 切换深色模式
+  toggle_langs: 切换语言
+  confirm: 确认
+  cancel: 取消
+  export: 导出
+  generate: 生成
+  upload: 上传
+  download: 下载
+  copy: 复制
+  copied: 已复制
+  remove: 移除
+  edit: 编辑
+  save: 保存
+  reset: 重置
+  preview: 预览
+  settings: 设置
+  delete: 删除
+
+dialog:
+  close: 关闭对话框
+  confirm: 确认
+  cancel: 取消
+  save: 保存
+  back: 返回
+
+icon:
+  detail:
+    title: 图标详情
+    description: 查看图标信息并复制相关代码到剪贴板
+    preview: 图标预览
+    unicodeCharacter: Unicode字符
+    translationKey: 翻译键
+    textComponent: 文本组件
+    tellrawCommand: Tellraw命令
+    source: 来源
+    path: 路径
+    category: 分类
+    namespace: 命名空间
+
+intro:
+  desc: Minecraft聊天图标生成器
+  subtitle: 将Minecraft材质转换为聊天图标和Unicode字符
+
+packIcon:
+  title: 材质包图标
+  description: 上传自定义的pack.png图标文件
+
+  actions:
+    remove: 移除图标
+    showRequirements: 要求说明
+    reupload: 重新上传
+
+  requirements:
+    title: Minecraft材质包图标要求
+
+  upload:
+    title: 上传材质包图标
+    description: 点击选择或拖拽PNG图标文件到此处
+    suggestedSizes: '建议尺寸: 64x64, 128x128, 256x256 像素'
+
+  preview:
+    size: 大小
+    dimensions: 尺寸
+    hasTransparency: 包含透明度
+
+  validation:
+    errors: 验证错误
+    warnings: 建议优化
+    success: 图标验证通过！
+
+  optimizer:
+    title: 图标优化
+    description: 可选：优化图标文件大小和兼容性
+    keepOriginal: 保持原尺寸
+    resizeTo: '调整为 {size}x{size}'
+    optimize: 优化
+    optimizing: 优化中...
+
+  errors:
+    unknown: 未知错误
+    cannotReadImageData: 无法读取图像数据
+    cannotLoadImage: 无法加载图像文件
+    cannotResize: 无法生成调整大小的图标
+    optimizationFailed: 优化失败
+
+iconList:
+  stats:
+    showing: '显示 {current} / {total} 个图标'
+  instructions:
+    clickToCopy: 点击按钮复制或查看详情
+
+atlas:
+  title: 图集生成
+  empty:
+    title: 还没有图集
+    description: 请先选择Minecraft版本并上传材质包，然后生成图集
+    steps:
+      0: 选择Minecraft版本
+      1: 上传材质包ZIP文件
+      2: 点击生成图集按钮
+  errors:
+    noTextures: 没有找到可用的材质文件
+    imageLoadFailed: 图片加载失败
+    blobConversionFailed: 文件转换失败
+    generationFailed: 图集生成失败
+    unknown: 未知错误
+    tooManyTextures: 材质数量超过图集容量限制
+    cannotGenerate: 无法生成图集
+    noCompatibleTextures: 没有兼容的材质
+  info:
+    title: 图集信息
+    textureSize: 材质尺寸
+    unicodeRange: Unicode范围
+    layout: 图集布局
+    size: 图集尺寸
+    totalTextures: 材质数量
+    atlases: 图集数量
+    texturesMerged: 材质合并完成
+    conflictsResolved: 合并冲突已解决
+    conflictsDetails: '已解决 {conflicts} 个冲突，合并了 {total} 个独特材质'
+    atlasCount: 图集数量
+    willGenerate: '将为 {textures} 个材质生成 {count} 个图集'
+    count: 数量
+    countValue: '{current} / {total} 图集'
+  preview:
+    title: 图集预览
+    info: '{size}×{size} · {count} 个材质'
+    imageAlt: 图集预览图片
+  packStats:
+    title: 材质包合并统计
+    textureCount: '{count} 个材质'
+  generation:
+    generating: 正在生成图集...
+    failed: 图集生成失败
+    progress:
+      preparing: 准备材质数据
+      processing: 处理材质文件
+      creating: 创建图集画布
+      complete: 生成完成
+  success:
+    generated: 图集生成成功
+    details: '已生成 {atlases} 个图集，包含 {icons} 个图标'
+
+clipboard:
+  errors:
+    notSupported: 浏览器不支持剪贴板功能
+    failed: 复制失败，请重试
+  success:
+    copied: 已复制到剪贴板
+    sha1Copied: SHA1 哈希值已复制到剪贴板
+
+common:
+  close: 关闭
+  loading: 加载中...
+  error: 错误
+  pixels: 像素
+  success: 成功
+  warning: 警告
+  info: 信息
+  search: 搜索
+  clear: 清除
+  select: 选择
+  unselect: 取消选择
+  empty: 暂无数据
+  total: 总计
+  selected: 已选择
+  all: 全部
+  enabled: 已启用
+  disabled: 已禁用
+  optional: 可选
+  required: 必需
+
+app:
+  title: Minecraft 聊天图标生成器
+  description: 将Minecraft材质转换为聊天图标与Unicode字符映射
+
+actions:
+  title: 操作
+  generateAtlas: 生成图集
+  generating: 生成中...
+  exportPack: 导出材质包
+  saveInstance: 保存实例
+  saving: 保存中...
+  saved: 已保存
+
+font:
+  namespace:
+    title: 命名空间
+    description: 材质包的命名空间，字体名称将自动生成
+  generatedFiles:
+    title: 生成的字体文件
+    atlasIndex: '图集 {index}'
+    bitmapCount: '{count} 个位图'
+
+upload:
+  title: 材质包上传
+  vanilla:
+    title: 原版材质包
+    description: 上传Minecraft原版材质包作为基础
+    upload: 上传原版包
+    required: 需要原版材质包
+    loaded: 已加载
+  custom:
+    title: 自定义材质包
+    description: 添加自定义材质包，支持拖拽排序
+    upload: 添加材质包
+    drag: 拖拽文件到此处或点击上传
+    deleteHint: 拖拽材质包到此处删除
+    deleteDescription: 松开鼠标完成删除
+  drag: 拖拽文件到此处上传
+  dragOrClick: 点击或拖拽ZIP文件
+  multipleSupported: 支持多个文件同时上传
+  fileTypes:
+    image: PNG, JPG, JPEG
+    text: TXT, MD, LICENSE
+    archive: ZIP文件
+  messages:
+    uploaded: 文件上传成功
+    cleared: 文件已移除
+    replace: 替换文件
+    processing: 正在处理文件...
+    failed: 上传失败
+    invalidType: 无效的文件类型
+    tooLarge: 文件过大
+    onlyImages: 只允许图片文件
+    onlyText: 只允许文本文件
+    packIconPreview: 材质包图标预览
+    packUploaded: '已上传材质包: {name}，包含 {itemCount} 个item材质和 {blockCount} 个block材质'
+  progress:
+    title: 上传进度
+    parsing: 解析材质包
+    extracting: 提取材质文件
+    validating: 验证文件格式
+  error:
+    invalidFormat: 请选择ZIP格式的材质包文件
+    fileTooLarge: 文件过大
+    emptyFile: 文件为空
+    uploadFailed: 上传失败
+    parseError: 解析失败
+    noValidTextures: '材质包 {name} 中未找到有效的item或block材质'
+    parseFileFailed: '无法解析文件: {name} - {error}'
+
+pack:
+  vanilla: 原版
+  textures: 材质
+  version: 版本
+  details: 详情
+  conflicts: 冲突
+  remove: 移除
+  statistics: 统计信息
+  blocks: 方块
+  items: 物品
+  namespaces: 命名空间
+  metadata: 元数据
+  description: 描述
+  uploaded: 上传时间
+  noConflicts: 没有冲突
+  conflictWith: 与以下材质包冲突
+  conflictsDescription: 以下材质存在冲突，优先级高的材质包将覆盖低优先级的
+  priority: 优先级
+  inheritance: 继承关系
+
+minecraft:
+  version:
+    title: Minecraft版本
+    description: 选择目标Minecraft版本
+    compatibility: 兼容性检查
+  selectVersion: 选择版本
+  versionSelected: 版本已选择
+  willAutoLoad: '将自动加载 {version} 对应的原版材质包'
+  selectPlaceholder: 请选择版本
+  releases: 正式版
+  snapshots: 快照版
+  versionInfo: 版本信息
+  versionLabel: 版本
+  packFormat: 材质包格式
+  releaseDate: 发布日期
+  protocol: 协议版本
+  textureChanges: 材质变更
+  recommended: 推荐
+  versionChanged: 已切换到版本 {version}
+  invalidVersion: 无效版本
+  noTextures: 没有材质可检查
+  allCompatible: 所有材质都兼容
+  someIncompatible: 发现 {count} 个不兼容材质
+  validationError: 兼容性检查失败
+  checkCompatibility: 检查兼容性
+  statistics: 版本统计
+  totalVersions: 总版本数
+  compatible: 兼容材质
+  changes:
+    added: 新增
+    removed: 移除
+    renamed: 重命名
+    modified: 修改
+
+vanilla:
+  loaded: 已加载版本 {version} 的原版材质包
+  loadFailed: 加载原版材质包失败
+  upload:
+    failed: 原版材质包上传失败
+  pack:
+    item: 原版物品
+    block: 原版方块
+    itemWithVersion: '原版物品 ({version})'
+    blockWithVersion: '原版方块 ({version})'
+
+export:
+  errors:
+    failed: 导出失败
+    noAtlas: 请先生成图集
+    atlasUnavailable: 图集状态不可用
+    unknown: 未知错误
+    emptyFile: 生成的文件为空
+  success:
+    completed: 导出成功
+    details: '资源包已保存为: {filename}'
+  copysha1: 复制 SHA1
+  validation:
+    requiresIconsAndName: 导出需要至少一个图标和材质包名称
+    requiresContentRulesAgreement: 导出前需要同意内容生成规则
+  apply: 应用
+  reset: 重置
+  continue: 继续
+  back: 返回
+  next: 下一步
+  finish: 完成
+  dismiss: 关闭
+
+  confirmation:
+    title: 导出确认
+    description: 检查并确认导出设置
+    packInfo: 材质包信息
+    copyright: 版权声明
+    copyrightWarning: 此材质包包含来自以下源包的材质。请确保你已了解相关版权和许可声明
+    author: 作者
+    iconsUsed: '使用了 {count} 个图标'
+    atlasPreview: 图集预览
+    atlasPreviewTooltip: 生成的纹理图集预览
+    iconCount: 图标数量
+    atlasSize: 图集尺寸
+    layout: 布局
+    fontFiles: 字体文件
+    fontFilesList: 字体文件列表
+    fileStructure: 文件结构
+    exportOptions: 导出选项
+    totalFiles: 文件总数
+    estimatedSize: 预计大小
+    packFormat: 材质包格式
+    supportedFormats: 支持的格式
+    compatibilityMode: 兼容模式
+    allowIncompatible: 允许不兼容
+    hasErrors: 存在验证错误
+    hasWarnings: 存在验证警告
+    readyToExport: 准备导出
+    export: 导出
+    exporting: 导出中...
+    exportError: 导出错误
+    downloadInfo: 材质包将作为ZIP文件下载
+  fileStructure:
+    moreFiles: '还有 {count} 个文件...'
+    multiBitmap: 多位图字体
+  settings:
+    title: 导出设置
+    description: 配置材质包导出设置
+    hasErrors: 请在导出前修复错误
+    readyToExport: 准备导出
+    export: 开始导出
+    packMetaInfo: 材质包元数据
+    packName: 材质包名称
+    packNamePlaceholder: Minecraft聊天图标
+    packDescription: 描述
+    descriptionPlaceholder: 从材质生成的自定义聊天图标
+    packIcon: 包图标
+    packIconPlaceholder: 点击或拖拽PNG图标文件
+    license: 许可证文件
+    licensePlaceholder: 点击或拖拽许可证文件
+    packFormat: 材质包格式
+    packFormat15: 1.20.1 (格式 15)
+    packFormat18: 1.20.2 (格式 18)
+    packFormat22: 1.21+ (格式 22)
+    packFormat34: 1.21.4+ (格式 34)
+    packFormat46: 格式 46
+    fontSettings: 字体设置
+    namespace: 命名空间
+    namespacePlaceholder: iconifycraft
+    fontName: 字体名称
+    fontNamePlaceholder: default
+    atlasSize: 图集尺寸
+    atlasSizeHint: 更大的尺寸支持更多图标但可能影响性能
+    textureOptions: 材质选项
+    includeCustomTextures: 包含自定义材质
+    includeCustomTexturesHint: 包含从上传的材质包中提取的材质
+    includeVanillaTextures: 包含原版材质
+    includeVanillaTexturesHint: 包含默认的Minecraft材质
+    enableCompression: 启用压缩
+    enableCompressionHint: 压缩导出文件以减小大小
+    includeReadme: 包含README文件
+    includeReadmeHint: 生成并包含README.md文件到导出的材质包中
+    includeAtlas: 包含图集文件
+    includeFont: 包含字体配置
+    includeTranslations: 包含翻译文件
+    includeSounds: 包含音效文件
+    includeModels: 包含模型文件
+    compressionLevel: 压缩级别
+    includeTranslationKeys: 包含翻译键
+    includeTranslationKeysHint: 自动生成翻译键映射文件 (en_us.json)
+    agreeContentRules: 我已阅读并同意{link}
+    contentRulesLinkText: 内容生成规则
+    agreeContentRulesHint: 您已阅读并同意内容生成规则
+    allowIncompatibleHint: 启用后允许材质包在格式不匹配时加载
+    supportedFormatsHint: 可选。指定材质包支持的Minecraft版本格式
+    supportedFormatsCustomPlaceholder: '例如: [15, 18, 22]'
+    supportedFormatsOptions:
+      notSpecified: 未指定（使用默认）
+      latest: '最新格式 (1.21+)'
+      v120Plus: '1.20+ 格式'
+      common: '常用格式 (1.18+)'
+      range48_85: '范围格式 48-85 (1.21+)'
+      range26_85: '范围格式 26-85 (1.20.3+)'
+      range15_85: '范围格式 15-85 (1.20+)'
+      custom: 自定义
+    generateReadme: 生成README文件
+    generateChangelog: 生成更新日志
+    customIcon: 自定义图标
+  progress:
+    preparing: 准备导出数据...
+    generating: 生成图集和字体文件...
+    compressing: 压缩材质包...
+    finalizing: 完成导出...
+    complete: 导出成功完成
+    error: 导出失败
+    generateReadme: 生成README文件
+    generateChangelog: 生成更新日志
+    customIcon: 自定义图标
+    license: 许可证文件
+  metadata:
+    name: 材质包名称
+    displayName: 显示名称
+    description: 描述
+    author: 作者
+    version: 版本
+    category: 分类
+    homepage: 主页
+    license: 许可证
+    tags: 标签
+    features: 功能特性
+    credits: 制作人员
+    compatibility: 兼容性
+    minVersion: 最低版本
+    maxVersion: 最高版本
+
+icons:
+  title: 图标列表
+  search: 搜索图标名称、Unicode或翻译键...
+  searchPlaceholder: 搜索图标名称、Unicode或翻译键...
+  clearSearch: 清除搜索
+  categories:
+    block: 方块
+    item: 物品
+    building: 建筑
+    decoration: 装饰
+    redstone: 红石
+    transportation: 运输
+    miscellaneous: 杂项
+    food: 食物
+    tools: 工具
+    combat: 战斗
+    brewing: 酿造
+    materials: 材料
+  copy:
+    unicode: 复制Unicode字符
+    translationKey: 复制翻译键
+    success: 复制成功
+    failed: 复制失败
+    unicodeSuccess: Unicode {value} 已复制到剪贴板
+    translationSuccess: 翻译键 {value} 已复制到剪贴板
+    unicodeError: 复制Unicode到剪贴板失败
+    translationError: 复制翻译键到剪贴板失败
+  detail:
+    title: 查看详情
+    namespace: 命名空间
+    category: 分类
+    translationKey: 翻译键
+    unicode: Unicode字符
+    source: 来源
+    position: 位置
+    atlas: 所属图集
+  stats:
+    showing: 显示 {current} / {total} 个图标
+    hint: 点击按钮复制或查看详情
+    category: 分类
+    translationKey: 翻译键
+    unicode: Unicode字符
+    source: 来源
+    position: 位置
+    atlas: 所属图集
+
+notification:
+  copy:
+    unicode: 已复制Unicode字符 {value}
+    translationKey: 已复制翻译键 {value}
+  atlas:
+    generated: 已生成 {count} 个图集，包含 {total} 个材质
+    merged: 合并了 {count} 个唯一材质，{conflicts} 个材质被覆盖
+  export:
+    preparing: 正在准备导出数据
+    compressing: 正在压缩文件
+    complete: 导出完成
+
+errors:
+  uploadErrors: 上传错误
+  fileFormat: 文件格式错误
+  networkError: 网络错误
+  parseError: 解析错误
+  validationError: 验证错误
+  unknown: 未知错误
+
+instances:
+  title: 实例管理
+  description: 管理您保存的Minecraft聊天图标实例
+  loading: 加载实例中...
+  hasAtlas: 已生成图集
+  updated: 已更新
+  backToList: 返回实例列表
+  createNew: 新建实例
+  createFirst: 创建您的第一个实例
+
+  empty:
+    title: 暂无实例
+    description: 您还没有保存任何实例。通过生成图集并保存来创建您的第一个实例。
+
+  noResults:
+    title: 未找到结果
+    description: 没有实例匹配您当前的筛选条件。
+
+  search:
+    placeholder: 按名称或版本搜索实例...
+
+  filter:
+    allVersions: 所有版本
+
+  clearFilters: 清除筛选
+
+  stats:
+    total: 实例总数
+    storage: 存储占用
+    atlases: 图集
+    textures: 纹理
+
+  meta:
+    packs: 个材质包
+    pack: 个材质包
+    icons: 图标
+
+  actions:
+    rename: 重命名实例
+    delete: 删除实例
+    open: 打开实例
+
+  save:
+    success: 实例保存成功
+    created: 实例创建成功
+    updated: 实例更新成功
+    details: '{name} - {packCount} 个资源包 ({version})'
+    errors:
+      noResourcePacks: 无法保存没有资源包的实例
+      failed: 保存实例失败
+      unknown: 未知错误
+
+  load:
+    success: 实例加载成功
+    details: '已加载实例 "{name}"'
+    atlasGenerated: 图集生成成功
+    errors:
+      notFound: 实例未找到
+      failed: 加载实例失败
+
+  delete:
+    confirmTitle: 删除实例
+    confirmMessage: 确定要删除实例 "{name}" 吗？此操作无法撤销。
+    success: 实例删除成功
+    successMessage: 实例 "{name}" 已删除
+    failed: 删除实例失败
+    unknownError: 删除实例时发生未知错误
+
+  rename:
+    title: 重命名实例
+    newName: 新名称
+    placeholder: 输入新的实例名称
+    hint: 为您的实例选择一个描述性名称
+    success: 实例已重命名为 "{name}"
+    failed: 重命名实例失败
+    unknownError: 重命名实例时发生未知错误
+    errors:
+      emptyName: 实例名称不能为空
+
+  refresh:
+    failed: 刷新实例失败
+
+  cleanup:
+    success: 清理了 {count} 个旧实例
+    nothingToClean: 没有旧实例需要清理
+    failed: 清理实例失败
+
+  notFound:
+    title: 实例未找到
+    description: 请求的实例无法找到或可能已被删除。
+
+  projects:
+    title: 项目
+
+  recentPreviews:
+    title: 最近预览
+
+  usage:
+    title: 使用统计
+
+  unsavedChanges:
+    confirmLeave: 您有未保存的更改。确定要在不保存的情况下离开吗？
+    confirmClose: 您有未保存的更改。确定要在不保存的情况下关闭吗？
+
+notfound: 未找到页面
+
+theme:
+  light: 浅色
+  dark: 深色
+  auto: 跟随系统
+
+settings:
+  title: 管理设置
+  description: 管理您的应用偏好和设置
+  appearance:
+    title: 外观
+    description: 自定义应用的外观
+    darkMode: 深色模式
+    darkModeDesc: 在浅色和深色主题之间切换
+    language:
+      title: 语言
+      description: 选择您的首选语言
+    theme:
+      title: 主题
+      description: 选择您偏好的配色方案
+      light: 浅色
+      lightDesc: 使用浅色主题
+      dark: 深色
+      darkDesc: 使用深色主题
+      auto: 跟随系统
+      autoDesc: 跟随系统偏好设置
+    toastPosition:
+      title: 通知位置
+      description: 点击按钮切换通知位置，系统会自动显示测试通知
+      switchPosition: 点击切换通知位置
+      current: '当前位置：{position}'
+      positions:
+        topLeft: 左上角
+        topCenter: 顶部居中
+        topRight: 右上角
+        bottomLeft: 左下角
+        bottomCenter: 底部居中
+        bottomRight: 右下角
+      test:
+        title: 位置已切换
+        description: '通知位置已切换到：{position}'
+    toastDuration:
+      title: 消息显示时间
+      description: 设置消息提示的自动隐藏时间
+      fast: 稍快
+      default: 默认
+      slow: 稍慢
+      testButton: 测试当前设置
+      current: '当前: {setting}'
+      test:
+        title: Toast 时长已更改
+        description: '当前设置: {duration}，此通知将按新设置的时长显示'
+    animations: 启用动画
+    animationsDesc: 启用UI动画和过渡效果
+  behavior:
+    title: 应用行为
+    description: 配置应用的行为方式
+  debugging:
+    title: 调试
+    description: 开发和故障排除工具
+    logLevel:
+      title: 日志级别
+      description: 控制保存到本地存储的日志级别
+    logStorage:
+      title: 日志存储
+      description: 启用日志持久化存储，用于问题诊断
+    maxLogEntries:
+      title: 最大日志条目
+      description: 保存的最大日志数量
+    logDownload:
+      title: 日志下载
+      description: 导出或清除应用日志
+    downloadLogs: 下载日志
+    downloadJson: JSON格式
+    downloadJsonDesc: 下载详细的日志数据，包含完整的错误信息和调试详情
+    downloadTxt: 文本格式
+    downloadTxtDesc: 下载可读的文本格式日志，方便查看和分享
+    clearLogs: 清除日志
+    clearLogsDesc: 删除所有已保存的日志数据，释放存储空间
+    logStatus: 日志状态
+    logsCount: '当前有 {count} 条日志'
+    noLogs: 暂无日志
+    noLogsToDownload: 没有可下载的日志
+    downloadSuccess: '日志已下载：{filename}'
+    downloadError: 下载日志失败
+    clearSuccess: 日志已清除
+    clearError: 清除日志失败
+  autoSave:
+    title: 自动保存
+    description: 定期自动保存您的工作
+    interval: 保存间隔
+    intervalDescription: 自动保存工作的频率
+  promptOnLeave:
+    title: 离开提醒
+    description: 在有未保存更改时离开前询问
+  reset:
+    sectionTitle: 重置设置
+    sectionDescription: 将所有设置恢复为默认值
+    title: 重置设置
+    description: 将所有设置恢复为默认值
+    button: 恢复默认设置
+    confirmTitle: 重置设置
+    confirmDescription: 确定要将所有设置重置为默认值吗？此操作无法撤销。
+    confirmButton: 恢复默认设置
+    cancel: 取消
+  cache:
+    title: 缓存管理
+    enabled: 启用缓存
+    enabledDesc: 缓存文件以提高性能
+    size: 缓存大小
+    sizeDesc: 当前缓存存储使用情况
+    clear: 清除缓存
+    autoClean: 自动清理
+    autoCleanDesc: 自动清理旧的缓存文件
+    never: 从不
+    daily: 每天
+    weekly: 每周
+    monthly: 每月
+    cleared: 缓存已清除
+    clearedDesc: 所有缓存数据已成功清除
+    clearFailed: 清除失败
+    clearFailedDesc: 清除缓存数据失败
+  export:
+    title: 导出设置
+    defaultFormat: 默认包格式
+    defaultFormatDesc: 导出时的默认Minecraft包格式
+    format15: 1.20.1 (格式 15)
+    format18: 1.20.2 (格式 18)
+    format22: 1.21+ (格式 22)
+    format34: 1.21.4+ (格式 34)
+    compression: 启用压缩
+    compressionDesc: 压缩导出文件以减小大小
+    autoSave: 自动保存
+    autoSaveDesc: 自动保存导出设置
+    downloadPath: 下载路径
+    downloadPathDesc: 导出文件的默认下载位置
+    downloadPathPlaceholder: 选择下载文件夹...
+    browse: 浏览
+    pathNotSupported: 不支持路径选择
+    pathNotSupportedDesc: 浏览器不支持文件夹选择
+  advanced:
+    title: 高级设置
+    debugMode: 调试模式
+    debugModeDesc: 启用调试日志和开发者工具
+    management: 设置管理
+    applyOptimal: 应用最优配置
+    export: 导出设置
+    import: 导入设置
+    reset: 重置为默认值
+    systemInfo: 系统信息
+    userAgent: 用户代理
+    screen: 屏幕分辨率
+    memory: 设备内存
+    storage: 存储使用情况
+    resetConfirm: 您确定要将所有设置重置为默认值吗？
+    resetSuccess: 设置已重置
+    resetSuccessDesc: 所有设置已重置为默认值
+    exportSuccess: 设置已导出
+    exportSuccessDesc: 设置已成功导出
+    exportFailed: 导出失败
+    exportFailedDesc: 导出设置失败
+    importSuccess: 设置已导入
+    importSuccessDesc: 设置已成功导入
+    importFailed: 导入失败
+    importFailedDesc: 导入设置文件失败
+    optimalApplied: 已应用最优设置
+    optimalAppliedDesc: 已应用性能优化设置
+    clearFailed: 清除失败
+    clearFailedDesc: 清除缓存数据失败

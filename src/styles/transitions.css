@@ -1,0 +1,196 @@
+/* 过渡效果和交互状态 */
+
+/* 实用动画类 */
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* 交互状态增强 */
+.interactive {
+  transition: all 0.2s ease-in-out;
+}
+
+.interactive:hover {
+  transform: translateY(-1px);
+}
+
+.interactive:active {
+  transform: translateY(0);
+}
+
+/* 页面加载动画 */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* 卡片悬停效果增强 */
+.card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+html.dark .card-hover:hover {
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* 动画辅助类 */
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.slide-in-from-right-4 {
+  animation: slide-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.duration-300 {
+  animation-duration: 300ms;
+}
+
+/* 错开动画系统 */
+.slide-enter-content > * {
+  --stagger: 0;
+  --delay: 150ms;
+  --start: 0ms;
+  animation: slide-enter 1s both 1;
+  animation-delay: calc(var(--start) + var(--stagger) * var(--delay));
+}
+
+/* 支持最多20个子元素的错开动画 */
+.slide-enter-content > *:nth-child(1) {
+  --stagger: 1;
+}
+.slide-enter-content > *:nth-child(2) {
+  --stagger: 2;
+}
+.slide-enter-content > *:nth-child(3) {
+  --stagger: 3;
+}
+.slide-enter-content > *:nth-child(4) {
+  --stagger: 4;
+}
+.slide-enter-content > *:nth-child(5) {
+  --stagger: 5;
+}
+.slide-enter-content > *:nth-child(6) {
+  --stagger: 6;
+}
+.slide-enter-content > *:nth-child(7) {
+  --stagger: 7;
+}
+.slide-enter-content > *:nth-child(8) {
+  --stagger: 8;
+}
+.slide-enter-content > *:nth-child(9) {
+  --stagger: 9;
+}
+.slide-enter-content > *:nth-child(10) {
+  --stagger: 10;
+}
+.slide-enter-content > *:nth-child(11) {
+  --stagger: 11;
+}
+.slide-enter-content > *:nth-child(12) {
+  --stagger: 12;
+}
+.slide-enter-content > *:nth-child(13) {
+  --stagger: 13;
+}
+.slide-enter-content > *:nth-child(14) {
+  --stagger: 14;
+}
+.slide-enter-content > *:nth-child(15) {
+  --stagger: 15;
+}
+.slide-enter-content > *:nth-child(16) {
+  --stagger: 16;
+}
+.slide-enter-content > *:nth-child(17) {
+  --stagger: 17;
+}
+.slide-enter-content > *:nth-child(18) {
+  --stagger: 18;
+}
+.slide-enter-content > *:nth-child(19) {
+  --stagger: 19;
+}
+.slide-enter-content > *:nth-child(20) {
+  --stagger: 20;
+}
+
+/* 快速进入版本（更短的延迟） */
+.slide-enter-content--fast > * {
+  --delay: 80ms;
+}
+
+/* 慢速进入版本（更长的延迟） */
+.slide-enter-content--slow > * {
+  --delay: 250ms;
+}
+
+/* 网格布局的错开动画（适用于图标网格等） */
+.slide-enter-grid > * {
+  --grid-delay: 50ms;
+  --grid-start: 100ms;
+  animation: slide-enter 0.8s both 1;
+  animation-delay: calc(var(--grid-start) + var(--stagger) * var(--grid-delay));
+}
+
+/* 左侧滑入动画应用 */
+.slide-enter-left > * {
+  animation: slide-enter-left 0.8s both 1;
+  animation-delay: calc(var(--start) + var(--stagger) * var(--delay));
+}
+
+/* 右侧滑入动画应用 */
+.slide-enter-right > * {
+  animation: slide-enter-right 0.8s both 1;
+  animation-delay: calc(var(--start) + var(--stagger) * var(--delay));
+}
+
+/* 缩放入场动画应用 */
+.slide-enter-scale > * {
+  animation: slide-enter-scale 0.6s both 1;
+  animation-delay: calc(var(--start) + var(--stagger) * var(--delay));
+}
+
+/* 移动端优化 */
+@media (max-width: 640px) {
+  .slide-enter-content > * {
+    --delay: 100ms;
+  }
+}

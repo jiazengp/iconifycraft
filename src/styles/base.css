@@ -1,0 +1,55 @@
+/* 基础样式 - 全局HTML和body样式 */
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family:
+    'Noto Sans',
+    'Noto Sans SC',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+}
+
+html.dark {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  color-scheme: dark;
+}
+
+/* 焦点样式 */
+.focus-ring:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(113, 113, 122, 0.4);
+}
+
+/* 选择文本样式 */
+::selection {
+  background-color: rgba(113, 113, 122, 0.15);
+  color: inherit;
+}
+
+html.dark ::selection {
+  background-color: rgba(113, 113, 122, 0.25);
+}
+
+/* 响应式字体大小 */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}

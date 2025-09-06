@@ -1,0 +1,789 @@
+theme:
+  light: Light
+  dark: Dark
+  auto: System
+
+button:
+  about: About
+  back: Back
+  go: GO
+  home: Home
+  toggle_dark: Toggle dark mode
+  toggle_langs: Change languages
+  confirm: Confirm
+  cancel: Cancel
+  export: Export
+  generate: Generate
+  upload: Upload
+  download: Download
+  copy: Copy
+  copied: Copied
+  delete: Delete
+  remove: Remove
+  edit: Edit
+  save: Save
+  reset: Reset
+  preview: Preview
+  settings: Settings
+
+intro:
+  desc: IconifyCraft
+  subtitle: Convert Minecraft textures to chat icons with Unicode characters
+
+common:
+  close: Close
+  loading: Loading...
+  error: Error
+  pixels: pixels
+  success: Success
+  warning: Warning
+  info: Info
+  search: Search
+  clear: Clear
+  select: Select
+  unselect: Unselect
+  empty: No data
+  total: Total
+  selected: Selected
+  all: All
+  enabled: Enabled
+  disabled: Disabled
+  optional: Optional
+  required: Required
+
+dialog:
+  close: Close dialog
+  confirm: Confirm
+  cancel: Cancel
+  save: Save
+  back: Back
+
+packIcon:
+  title: Resource Pack Icon
+  description: Upload custom pack.png icon file
+
+  actions:
+    remove: Remove Icon
+    showRequirements: Show Requirements
+    reupload: Re-upload
+
+  requirements:
+    title: Minecraft Resource Pack Icon Requirements
+
+  upload:
+    title: Upload Resource Pack Icon
+    description: Click to select or drag PNG icon file here
+    suggestedSizes: 'Suggested sizes: 64x64, 128x128, 256x256 pixels'
+
+  preview:
+    size: Size
+    dimensions: Dimensions
+    hasTransparency: Has Transparency
+
+  validation:
+    errors: Validation Errors
+    warnings: Optimization Suggestions
+    success: Icon validation passed!
+
+  optimizer:
+    title: Icon Optimization
+    description: 'Optional: Optimize icon file size and compatibility'
+    keepOriginal: Keep Original Size
+    resizeTo: 'Resize to {size}x{size}'
+    optimize: Optimize
+    optimizing: Optimizing...
+
+  errors:
+    unknown: Unknown error
+    cannotReadImageData: Cannot read image data
+    cannotLoadImage: Cannot load image file
+    cannotResize: Cannot generate resized icon
+    optimizationFailed: Optimization failed
+
+iconList:
+  stats:
+    showing: 'Showing {current} / {total} icons'
+  instructions:
+    clickToCopy: Click buttons to copy or view details
+
+icon:
+  detail:
+    title: Icon Details
+    description: View icon information and copy related code to clipboard
+    preview: Icon Preview
+    unicodeCharacter: Unicode Character
+    translationKey: Translation Key
+    textComponent: Text Component
+    tellrawCommand: Tellraw Command
+    source: Source
+    path: Path
+    category: Category
+    namespace: Namespace
+
+export:
+  validation:
+    requiresIconsAndName: Export requires at least one icon and a pack name
+    requiresContentRulesAgreement: You must agree to the content generation rules before exporting
+  apply: Apply
+  reset: Reset
+  continue: Continue
+  back: Back
+  next: Next
+  finish: Finish
+  dismiss: Dismiss
+  errors:
+    failed: Export failed
+    noAtlas: Please generate atlas first
+    atlasUnavailable: Atlas state unavailable
+    unknown: Unknown error
+    emptyFile: Generated file is empty
+  success:
+    completed: Export successful
+    details: 'Resource pack saved as: {filename}'
+  copysha1: Copy SHA1
+  settings:
+    title: Export Settings
+    description: Configure resource pack export settings
+    hasErrors: Please fix errors before exporting
+    readyToExport: Ready to export
+    export: Start export
+    packMetaInfo: Resource pack metadata
+    packName: Resource Pack Name
+    packNamePlaceholder: IconifyCraft
+    packDescription: Description
+    descriptionPlaceholder: Custom chat icons generated from textures
+    packIcon: Pack Icon
+    packIconPlaceholder: Click or drag PNG icon file
+    license: License File
+    licensePlaceholder: Click or drag license file
+    packFormat: Resource Pack Format
+    packFormat15: 1.20.1 (Format 15)
+    packFormat18: 1.20.2 (Format 18)
+    packFormat22: '1.21+ (Format 22)'
+    packFormat34: '1.21.4+ (Format 34)'
+    packFormat46: Format 46
+    fontSettings: Font Settings
+    namespace: Namespace
+    namespacePlaceholder: iconifycraft
+    fontName: Font Name
+    fontNamePlaceholder: default
+    atlasSize: Atlas Size
+    atlasSizeHint: Larger sizes support more icons but may affect performance
+    textureOptions: Texture Options
+    includeCustomTextures: Include custom textures
+    includeCustomTexturesHint: Include textures extracted from uploaded resource packs
+    includeVanillaTextures: Include vanilla textures
+    includeVanillaTexturesHint: Include default Minecraft textures
+    enableCompression: Enable compression
+    enableCompressionHint: Compress exported file to reduce size
+    includeReadme: Include README file
+    includeReadmeHint: Generate and include a README.md file in the exported pack
+    includeAtlas: Include atlas files
+    includeFont: Include font configuration
+    includeTranslations: Include translation files
+    includeSounds: Include sound files
+    includeModels: Include model files
+    compressionLevel: Compression level
+    allowIncompatibleHint: Enable to allow resource pack to load when format doesn't match
+    supportedFormatsHint: Optional. Specify supported Minecraft version formats for resource pack
+    supportedFormatsCustomPlaceholder: 'e.g.: [15, 18, 22]'
+    supportedFormatsOptions:
+      notSpecified: Not specified (use default)
+      latest: 'Latest format (1.21+)'
+      v120Plus: '1.20+ format'
+      common: 'Common format (1.18+)'
+      range48_85: 'Range format 48-85 (1.21+)'
+      range26_85: 'Range format 26-85 (1.20.3+)'
+      range15_85: 'Range format 15-85 (1.20+)'
+      custom: Custom
+    generateReadme: Generate README file
+    generateChangelog: Generate changelog
+    customIcon: Custom icon
+    includeTranslationKeys: Include translation keys
+    includeTranslationKeysHint: Automatically generate English translation file (en_us.json)
+    agreeContentRules: I have read and agree to the {link}
+    contentRulesLinkText: Content Generation Rules
+    agreeContentRulesHint: You have read and agree to the content generation rules, and commit to using generated content legally and compliantly
+  progress:
+    preparing: Preparing export data...
+    generating: Generating atlas and font files...
+    compressing: Compressing resource pack...
+    finalizing: Finalizing export...
+    complete: Export completed successfully
+    error: Export failed
+  metadata:
+    name: Resource Pack Name
+    displayName: Display Name
+    description: Description
+    author: Author
+    version: Version
+    category: Category
+    homepage: Homepage
+    license: License
+    tags: Tags
+    features: Features
+    credits: Credits
+    compatibility: Compatibility
+    minVersion: Minimum Version
+    maxVersion: Maximum Version
+  confirmation:
+    title: Export Confirmation
+    description: Review and confirm export settings
+    exportOptions: Export Options
+    supportedFormats: Supported Formats
+    allowIncompatible: Allow incompatible versions
+    downloadInfo: Resource pack will be downloaded as ZIP file
+    packInfo: Resource Pack Information
+    copyright: Copyright Notice
+    copyrightWarning: This resource pack contains textures from the following source packs. Please ensure you have permission to use these textures
+    author: Author
+    iconsUsed: '{count} icons used'
+    atlasPreview: Atlas Preview
+    atlasPreviewTooltip: Preview of the generated texture atlas
+    iconCount: Icon Count
+    atlasSize: Atlas Size
+    layout: Layout
+    fontFiles: Font Files
+    fontFilesList: Font files list
+    fileStructure: File Structure
+    totalFiles: Total Files
+    estimatedSize: Estimated Size
+    packFormat: Pack Format
+    compatibilityMode: Compatibility Mode
+    hasErrors: Has validation errors
+    hasWarnings: Has validation warnings
+    readyToExport: Ready to export
+    export: Export
+    exporting: Exporting...
+    exportError: Export error
+  fileStructure:
+    moreFiles: 'and {count} more files...'
+    multiBitmap: Multi-bitmap font
+
+actions:
+  title: Actions
+  generateAtlas: Generate Atlas
+  generating: Generating...
+  exportPack: Export Resource Pack
+  saveInstance: Save Instance
+  saving: Saving...
+  saved: Saved
+
+font:
+  namespace:
+    title: Namespace
+    description: Resource pack namespace, font name will be generated automatically
+  generatedFiles:
+    title: Generated font files
+    atlasIndex: 'Atlas {index}'
+    bitmapCount: '{count} bitmap(s)'
+
+app:
+  title: IconifyCraft
+  description: Convert Minecraft textures to chat icons with Unicode character mapping
+
+atlas:
+  title: Atlas Generation
+  empty:
+    title: No Atlas Yet
+    description: Please select Minecraft version and upload resource packs, then generate atlas
+    steps:
+      0: Select Minecraft version
+      1: Upload resource pack ZIP files
+      2: Click Generate Atlas button
+  errors:
+    noTextures: No available texture files found
+    imageLoadFailed: Image loading failed
+    blobConversionFailed: File conversion failed
+    generationFailed: Atlas generation failed
+    unknown: Unknown error
+    tooManyTextures: Texture count exceeds atlas capacity limit
+    cannotGenerate: Cannot generate atlas
+    noCompatibleTextures: No compatible textures found
+  info:
+    title: Atlas Information
+    textureSize: Texture Size
+    unicodeRange: Unicode Range
+    layout: Atlas Layout
+    size: Atlas Size
+    totalTextures: Texture Count
+    atlases: Atlas Count
+    texturesMerged: Textures merged successfully
+    conflictsResolved: Merge conflicts resolved
+    conflictsDetails: '{conflicts} conflicts resolved, {total} unique textures merged'
+    atlasCount: Atlas Count
+    willGenerate: 'Will generate {count} atlas(es) for {textures} textures'
+    countValue: '{count} textures'
+  preview:
+    title: Atlas Preview
+    info: '{size}×{size} · {count} textures'
+    imageAlt: Atlas Preview Image
+  packStats:
+    title: Resource Pack Merge Statistics
+    textureCount: '{count} textures'
+  generation:
+    generating: Generating atlas...
+    failed: Atlas generation failed
+    progress:
+      preparing: Preparing texture data
+      processing: Processing texture files
+      creating: Creating atlas canvas
+      complete: Generation complete
+  success:
+    generated: Atlas generated successfully
+    details: 'Generated {atlases} atlas(es) containing {icons} icons'
+
+clipboard:
+  errors:
+    notSupported: Browser does not support clipboard functionality
+    failed: Copy failed, please try again
+  success:
+    copied: Copied to clipboard
+    sha1Copied: SHA1 hash copied to clipboard
+
+upload:
+  vanilla:
+    title: Vanilla Resource Pack
+    description: Upload Minecraft vanilla resource pack as base
+    upload: Upload Vanilla Pack
+    required: Vanilla resource pack required
+    loaded: Loaded
+  custom:
+    title: Custom Resource Packs
+    description: Add custom resource packs, supports drag-to-reorder
+    upload: Add Resource Pack
+    drag: Drag files here or click to upload
+    deleteHint: Drag resource pack here to delete
+    deleteDescription: Release to complete deletion
+  drag: Drag files here to upload
+  dragOrClick: Click or drag to upload
+  multipleSupported: Multiple files supported
+  fileTypes:
+    image: PNG, JPG, JPEG
+    text: TXT, MD, LICENSE
+    archive: ZIP files
+  messages:
+    uploaded: File uploaded successfully
+    cleared: File removed
+    replace: Replace file
+    processing: Processing file...
+    failed: Upload failed
+    invalidType: Invalid file type
+    tooLarge: File too large
+    onlyImages: Only image files are allowed
+    onlyText: Only text files are allowed
+    packIconPreview: Pack icon preview
+    packUploaded: 'Uploaded resource pack: {name}, contains {itemCount} item textures and {blockCount} block textures'
+  progress:
+    title: Upload Progress
+    parsing: Parsing resource pack
+    extracting: Extracting texture files
+    validating: Validating file format
+  error:
+    invalidFormat: Please select ZIP format resource pack file
+    fileTooLarge: File too large
+    emptyFile: Empty file
+    uploadFailed: Upload failed
+    parseError: Parse failed
+    noValidTextures: 'No valid item or block textures found in resource pack {name}'
+    parseFileFailed: 'Cannot parse file: {name} - {error}'
+
+pack:
+  vanilla: Vanilla
+  textures: textures
+  version: Version
+  details: Details
+  conflicts: Conflicts
+  remove: Remove
+  statistics: Statistics
+  blocks: Blocks
+  items: Items
+  namespaces: Namespaces
+  metadata: Metadata
+  description: Description
+  uploaded: Uploaded at
+  noConflicts: No conflicts
+  conflictWith: Conflicts with
+  conflictsDescription: The following textures have conflicts, higher priority packs will override lower ones
+  priority: Priority
+  inheritance: Inheritance
+
+minecraft:
+  version:
+    title: Minecraft Version
+    description: Select target Minecraft version
+    compatibility: Compatibility Check
+  selectVersion: Select Version
+  versionSelected: Version selected
+  willAutoLoad: 'Will automatically load vanilla resource pack for {version}'
+  selectPlaceholder: Please select version
+  releases: Releases
+  snapshots: Snapshots
+  versionInfo: Version Info
+  versionLabel: Version
+  packFormat: Pack Format
+  releaseDate: Release Date
+  protocol: Protocol Version
+  textureChanges: Texture Changes
+  recommended: Recommended
+  versionChanged: 'Switched to version {version}'
+  invalidVersion: Invalid version
+  noTextures: No textures to check
+  allCompatible: All textures are compatible
+  someIncompatible: 'Found {count} incompatible textures'
+  validationError: Compatibility check failed
+  checkCompatibility: Check Compatibility
+  statistics: Version Statistics
+  totalVersions: Total Versions
+  compatible: Compatible Textures
+  changes:
+    added: Added
+    removed: Removed
+    renamed: Renamed
+    modified: Modified
+
+vanilla:
+  loaded: 'Loaded version {version} vanilla resource pack'
+  loadFailed: Failed to load vanilla resource pack
+  upload:
+    failed: Vanilla resource pack upload failed
+  pack:
+    item: Vanilla_Item
+    block: Vanilla_Block
+    itemWithVersion: 'Vanilla_Item ({version})'
+    blockWithVersion: 'Vanilla_Block ({version})'
+
+icons:
+  title: Icon List
+  search: Search icon names, Unicode or translation keys...
+  searchPlaceholder: Search icon names, Unicode or translation keys...
+  clearSearch: Clear search
+  categories:
+    block: Block
+    item: Item
+    building: Building
+    decoration: Decoration
+    redstone: Redstone
+    transportation: Transportation
+    miscellaneous: Miscellaneous
+    food: Food
+    tools: Tools
+    combat: Combat
+    brewing: Brewing
+    materials: Materials
+  copy:
+    unicode: Copy Unicode character
+    translationKey: Copy translation key
+    success: Copy successful
+    failed: Copy failed
+    unicodeSuccess: Unicode {value} copied to clipboard
+    translationSuccess: Translation key {value} copied to clipboard
+    unicodeError: Failed to copy Unicode to clipboard
+    translationError: Failed to copy translation key to clipboard
+  detail:
+    title: View details
+    namespace: Namespace
+    category: Category
+    translationKey: Translation Key
+    unicode: Unicode Character
+    source: Source
+    position: Position
+    atlas: Atlas
+  stats:
+    showing: 'Showing {current} / {total} icons'
+    hint: Click buttons to copy or view details
+    category: Category
+    translationKey: Translation Key
+    unicode: Unicode Character
+    source: Source
+    position: Position
+    atlas: Atlas
+
+notification:
+  copy:
+    unicode: Copied Unicode character {value}
+    translationKey: Copied translation key {value}
+  atlas:
+    generated: Generated {count} atlases containing {total} textures
+    merged: Merged {count} unique textures, {conflicts} textures were overridden
+  export:
+    preparing: Preparing export data
+    compressing: Compressing files
+    complete: Export complete
+
+settings:
+  title: Settings
+  description: Manage your application preferences and settings
+  appearance:
+    title: Appearance
+    description: Customize the look and feel of your application
+    darkMode: Dark Mode
+    darkModeDesc: Switch between light and dark themes
+    language:
+      title: Language
+      description: Select your preferred language
+    theme:
+      title: Theme
+      description: Choose your preferred color scheme
+      light: Light
+      lightDesc: Use light theme
+      dark: Dark
+      darkDesc: Use dark theme
+      auto: System
+      autoDesc: Follow system preference
+    toastPosition:
+      title: Notification Position
+      description: Click the button to switch notification position, a test notification will appear automatically
+      switchPosition: Click to switch notification position
+      current: 'Current position: {position}'
+      positions:
+        topLeft: Top Left
+        topCenter: Top Center
+        topRight: Top Right
+        bottomLeft: Bottom Left
+        bottomCenter: Bottom Center
+        bottomRight: Bottom Right
+      test:
+        title: Position Changed
+        description: 'Notification position changed to: {position}'
+    toastDuration:
+      title: Toast Display Time
+      description: Set the auto-hide time for message notifications
+      fast: Faster
+      default: Default
+      slow: Slower
+      testButton: Test current setting
+      current: 'Current: {setting}'
+      test:
+        title: Toast Duration Changed
+        description: 'Current setting: {duration}, this notification will display using the new duration'
+    animations: Enable Animations
+    animationsDesc: Enable UI animations and transitions
+  behavior:
+    title: Application Behavior
+    description: Configure how the application behaves
+  debugging:
+    title: Debugging
+    description: Development and troubleshooting tools
+    logLevel:
+      title: Log Level
+      description: Control the log level for local storage
+    logStorage:
+      title: Log Storage
+      description: Enable persistent log storage for issue diagnosis
+    maxLogEntries:
+      title: Max Log Entries
+      description: Maximum number of log entries to keep
+    logDownload:
+      title: Log Download
+      description: Export or clear application logs
+    downloadLogs: Download Logs
+    downloadJson: JSON Format
+    downloadJsonDesc: Download detailed log data with complete error information and debug details
+    downloadTxt: Text Format
+    downloadTxtDesc: Download readable text format logs for easy viewing and sharing
+    clearLogs: Clear Logs
+    clearLogsDesc: Delete all saved log data to free up storage space
+    logStatus: Log Status
+    logsCount: 'Currently {count} log entries'
+    noLogs: No logs available
+    noLogsToDownload: No logs available to download
+    downloadSuccess: 'Logs downloaded: {filename}'
+    downloadError: Failed to download logs
+    clearSuccess: Logs cleared successfully
+    clearError: Failed to clear logs
+  autoSave:
+    title: Auto Save
+    description: Automatically save your work periodically
+    interval: Save Interval
+    intervalDescription: How often to save your work automatically
+  promptOnLeave:
+    title: Prompt on Leave
+    description: Ask before leaving with unsaved changes
+  reset:
+    sectionTitle: Reset Settings
+    sectionDescription: Restore all settings to their default values
+    title: Reset Settings
+    description: Restore all settings to their default values
+    button: Reset to Defaults
+    confirmTitle: Reset Settings
+    confirmDescription: Are you sure you want to reset all settings to their default values? This action cannot be undone.
+    confirmButton: Reset to Defaults
+    cancel: Cancel
+  cache:
+    title: Cache Management
+    enabled: Enable Cache
+    enabledDesc: Cache files to improve performance
+    size: Cache Size
+    sizeDesc: Current cache storage usage
+    clear: Clear Cache
+    autoClean: Auto Clean
+    autoCleanDesc: Automatically clean old cache files
+    never: Never
+    daily: Daily
+    weekly: Weekly
+    monthly: Monthly
+    cleared: Cache Cleared
+    clearedDesc: All cache data has been cleared successfully
+    clearFailed: Clear Failed
+    clearFailedDesc: Failed to clear cache data
+  export:
+    title: Export Settings
+    defaultFormat: Default Pack Format
+    defaultFormatDesc: Default Minecraft pack format for exports
+    format15: 1.20.1 (Format 15)
+    format18: 1.20.2 (Format 18)
+    format22: 1.21+ (Format 22)
+    format34: 1.21.4+ (Format 34)
+    compression: Enable Compression
+    compressionDesc: Compress exported files to reduce size
+    autoSave: Auto Save
+    autoSaveDesc: Automatically save export settings
+    downloadPath: Download Path
+    downloadPathDesc: Default download location for exported files
+    downloadPathPlaceholder: Choose download folder...
+    browse: Browse
+    pathNotSupported: Path Selection Not Supported
+    pathNotSupportedDesc: Browser doesn't support folder selection
+  advanced:
+    title: Advanced Settings
+    debugMode: Debug Mode
+    debugModeDesc: Enable debug logging and developer tools
+    management: Settings Management
+    applyOptimal: Apply Optimal
+    export: Export Settings
+    import: Import Settings
+    reset: Reset to Defaults
+    systemInfo: System Information
+    userAgent: User Agent
+    screen: Screen Resolution
+    memory: Device Memory
+    storage: Storage Usage
+    resetConfirm: Are you sure you want to reset all settings to defaults?
+    resetSuccess: Settings Reset
+    resetSuccessDesc: All settings have been reset to default values
+    exportSuccess: Settings Exported
+    exportSuccessDesc: Settings have been exported successfully
+    exportFailed: Export Failed
+    exportFailedDesc: Failed to export settings
+    importSuccess: Settings Imported
+    importSuccessDesc: Settings have been imported successfully
+    importFailed: Import Failed
+    importFailedDesc: Failed to import settings file
+    optimalApplied: Optimal Settings Applied
+    optimalAppliedDesc: Performance-optimized settings have been applied
+
+errors:
+  uploadErrors: Upload Errors
+  fileFormat: File format error
+  networkError: Network error
+  parseError: Parse error
+  validationError: Validation error
+  unknown: Unknown error
+
+instances:
+  title: Overview
+  description: Manage your saved IconifyCraft instances
+  loading: Loading instance...
+  hasAtlas: Atlas Generated
+  updated: Updated
+  backToList: Back to Instances
+  createNew: Create New Instance
+  createFirst: Create Your First Instance
+
+  empty:
+    title: No Instances Yet
+    description: You haven't saved any instances yet. Create your first instance by generating an atlas and saving it.
+
+  noResults:
+    title: No Results Found
+    description: No instances match your current filters.
+
+  search:
+    placeholder: Search instances by name or version...
+
+  filter:
+    allVersions: All Versions
+
+  clearFilters: Clear Filters
+
+  stats:
+    total: Total Instances
+    storage: Storage Used
+    storageValue: Storage
+    atlases: Atlases
+    textures: Textures
+
+  meta:
+    packs: packs
+    pack: pack
+    icons: icons
+
+  actions:
+    rename: Rename Instance
+    delete: Delete Instance
+    open: Open Instance
+
+  save:
+    success: Instance saved successfully
+    created: Instance created successfully
+    updated: Instance updated successfully
+    details: '{name} - {packCount} pack(s) ({version})'
+    errors:
+      noResourcePacks: Cannot save instance without resource packs
+      failed: Failed to save instance
+      unknown: Unknown error
+
+  load:
+    success: Instance loaded successfully
+    details: 'Loaded instance "{name}"'
+    atlasGenerated: Atlas generated successfully
+    errors:
+      notFound: Instance not found
+      failed: Failed to load instance
+
+  delete:
+    confirmTitle: Delete Instance
+    confirmMessage: Are you sure you want to delete instance "{name}"? This action cannot be undone.
+    success: Instance deleted successfully
+    successMessage: Instance "{name}" has been deleted
+    failed: Failed to delete instance
+    unknownError: An unknown error occurred while deleting the instance
+
+  rename:
+    title: Rename Instance
+    newName: New Name
+    placeholder: Enter new instance name
+    hint: Choose a descriptive name for your instance
+    success: Instance renamed to "{name}"
+    failed: Failed to rename instance
+    unknownError: An unknown error occurred while renaming the instance
+    errors:
+      emptyName: Instance name cannot be empty
+
+  refresh:
+    failed: Failed to refresh instances
+
+  cleanup:
+    success: Cleaned up {count} old instances
+    nothingToClean: No old instances to clean up
+    failed: Failed to cleanup instances
+
+  notFound:
+    title: Instance Not Found
+    description: The requested instance could not be found or may have been deleted.
+
+  projects:
+    title: Projects
+
+  recentPreviews:
+    title: Recent Previews
+
+  usage:
+    title: Usage Statistics
+
+  unsavedChanges:
+    confirmLeave: You have unsaved changes. Are you sure you want to leave without saving?
+    confirmClose: You have unsaved changes. Are you sure you want to close without saving?
+
+notfound: Page not found

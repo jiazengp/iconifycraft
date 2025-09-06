@@ -1,0 +1,459 @@
+/**
+ * 设置页面统一样式系统
+ * 提供通用的CSS变量、类和组件样式
+ */
+
+/* ============================================================================
+   CSS 变量和 Tokens
+   ============================================================================ */
+
+:root {
+  /* 设置布局 */
+  --setting-spacing-sm: 0.5rem;
+  --setting-spacing-md: 1rem;
+  --setting-spacing-lg: 1.5rem;
+  --setting-spacing-xl: 2rem;
+
+  /* 设置字体 */
+  --setting-font-size-xs: 0.75rem;
+  --setting-font-size-sm: 0.875rem;
+  --setting-font-size-md: 1rem;
+  --setting-font-size-lg: 1.125rem;
+
+  /* 设置圆角 */
+  --setting-border-radius: 0.5rem;
+  --setting-border-radius-lg: 0.75rem;
+
+  /* 设置阴影 */
+  --setting-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --setting-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+  /* 动画时长 */
+  --setting-transition-fast: 150ms;
+  --setting-transition-normal: 200ms;
+  --setting-transition-slow: 300ms;
+
+  /* 响应式断点 */
+  --setting-breakpoint-sm: 640px;
+  --setting-breakpoint-md: 768px;
+  --setting-breakpoint-lg: 1024px;
+}
+
+/* ============================================================================
+   通用设置类
+   ============================================================================ */
+
+/* 设置布局 */
+.setting-container {
+  @apply space-y-8;
+}
+
+.setting-section {
+  @apply space-y-6;
+}
+
+.setting-group {
+  @apply space-y-4;
+}
+
+.setting-item {
+  @apply relative;
+}
+
+.setting-item + .setting-item {
+  @apply mt-4;
+}
+
+/* 设置标题和文本 */
+.setting-label {
+  @apply block text-sm font-semibold text-foreground;
+}
+
+.setting-title {
+  @apply text-lg font-semibold text-foreground;
+}
+
+.setting-description {
+  @apply text-sm text-muted-foreground leading-relaxed;
+}
+
+.setting-hint {
+  @apply text-xs text-muted-foreground italic;
+}
+
+.setting-error {
+  @apply text-xs text-destructive font-medium;
+}
+
+.setting-success {
+  @apply text-xs text-green-600 dark:text-green-400 font-medium;
+}
+
+/* 设置输入控件 */
+.setting-input {
+  @apply w-full px-3 py-2 text-sm bg-background
+         border border-border rounded-lg
+         text-foreground focus:ring-2 focus:ring-primary/20
+         focus:border-primary transition-all duration-200
+         hover:border-primary/60;
+}
+
+.setting-select {
+  @apply w-full pl-3 pr-10 py-2 text-sm bg-background
+         border border-border rounded-lg
+         text-foreground focus:ring-2 focus:ring-primary/20
+         focus:border-primary transition-all duration-200 appearance-none
+         hover:border-primary/60;
+}
+
+.setting-textarea {
+  @apply w-full px-3 py-2 text-sm bg-background
+         border border-border rounded-lg
+         text-foreground focus:ring-2 focus:ring-primary/20
+         focus:border-primary transition-all duration-200 resize-vertical
+         hover:border-primary/60 min-h-[80px];
+}
+
+.setting-checkbox {
+  @apply w-4 h-4 text-primary bg-background border border-border rounded
+         focus:ring-2 focus:ring-primary/20 transition-colors duration-200;
+}
+
+.setting-radio {
+  @apply w-4 h-4 text-primary bg-background border border-border
+         focus:ring-2 focus:ring-primary/20 transition-colors duration-200;
+}
+
+/* 设置按钮 */
+.setting-button {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium
+         bg-primary text-primary-foreground rounded-lg
+         hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/20
+         transition-all duration-200;
+}
+
+.setting-button-secondary {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium
+         bg-secondary text-secondary-foreground border border-border rounded-lg
+         hover:bg-secondary/80 focus:outline-none focus:ring-2 focus:ring-primary/20
+         transition-all duration-200;
+}
+
+.setting-button-ghost {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium
+         text-foreground hover:bg-accent rounded-lg
+         focus:outline-none focus:ring-2 focus:ring-primary/20
+         transition-all duration-200;
+}
+
+.setting-button-destructive {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium
+         text-destructive bg-destructive/10 border border-destructive/20 rounded-lg
+         hover:bg-destructive/20 hover:border-destructive/30
+         focus:outline-none focus:ring-2 focus:ring-destructive/20
+         transition-all duration-200;
+}
+
+/* 设置开关 */
+.setting-toggle {
+  @apply w-11 h-6 bg-muted rounded-full relative cursor-pointer
+         transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2
+         focus:ring-primary/20 focus:ring-offset-2 appearance-none;
+}
+
+.setting-toggle:checked {
+  @apply bg-primary;
+}
+
+.setting-toggle::after {
+  content: '';
+  @apply absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-sm
+         transition-transform duration-200 ease-in-out;
+}
+
+.setting-toggle:checked::after {
+  @apply transform translate-x-5;
+}
+
+/* 设置选择器箭头 */
+.setting-select-arrow {
+  @apply absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4
+         text-muted-foreground pointer-events-none;
+}
+
+/* 设置字段包装器 */
+.setting-field {
+  @apply space-y-3;
+}
+
+.setting-field.horizontal {
+  @apply flex items-start justify-between space-y-0 space-x-4;
+}
+
+.setting-field.horizontal .setting-header {
+  @apply flex-1;
+}
+
+.setting-field.horizontal .setting-content {
+  @apply flex-shrink-0 w-auto;
+}
+
+/* 设置子项 */
+.setting-children {
+  @apply mt-4 ml-4 space-y-4;
+}
+
+/* ============================================================================
+   动画效果
+   ============================================================================ */
+
+/* 入场动画 */
+.setting-enter {
+  @apply opacity-0 translate-y-4;
+  animation: settingSlideInUp var(--setting-transition-slow) ease-out forwards;
+}
+
+.setting-enter-left {
+  @apply opacity-0 -translate-x-4;
+  animation: settingSlideInLeft var(--setting-transition-slow) ease-out forwards;
+}
+
+.setting-enter-right {
+  @apply opacity-0 translate-x-4;
+  animation: settingSlideInRight var(--setting-transition-slow) ease-out forwards;
+}
+
+.setting-enter-scale {
+  @apply opacity-0 scale-95;
+  animation: settingSlideInScale var(--setting-transition-slow) ease-out forwards;
+}
+
+/* 动画关键帧 */
+@keyframes settingSlideInUp {
+  to {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+@keyframes settingSlideInLeft {
+  to {
+    @apply opacity-100 translate-x-0;
+  }
+}
+
+@keyframes settingSlideInRight {
+  to {
+    @apply opacity-100 translate-x-0;
+  }
+}
+
+@keyframes settingSlideInScale {
+  to {
+    @apply opacity-100 scale-100;
+  }
+}
+
+/* 悬停和聚焦效果 */
+.setting-hover-lift {
+  transition: transform var(--setting-transition-normal) ease;
+}
+
+.setting-hover-lift:hover {
+  @apply transform translate-y-[-2px];
+}
+
+.setting-focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-2;
+}
+
+/* ============================================================================
+   响应式设计
+   ============================================================================ */
+
+/* 平板端适配 */
+@media (max-width: 1023px) {
+  .setting-field.horizontal {
+    @apply flex-col space-y-3 space-x-0;
+  }
+
+  .setting-field.horizontal .setting-content {
+    @apply w-full;
+  }
+}
+
+/* 移动端适配 */
+@media (max-width: 767px) {
+  .setting-container {
+    @apply space-y-6;
+  }
+
+  .setting-section {
+    @apply space-y-4;
+  }
+
+  .setting-children {
+    @apply ml-0 pl-3;
+  }
+
+  .setting-label,
+  .setting-title {
+    @apply text-base; /* 防止iOS缩放 */
+  }
+
+  .setting-input,
+  .setting-select,
+  .setting-textarea {
+    @apply py-3 text-base; /* 增加点击区域，防止缩放 */
+  }
+
+  .setting-button,
+  .setting-button-secondary,
+  .setting-button-ghost,
+  .setting-button-destructive {
+    @apply px-3 py-2 text-sm;
+  }
+}
+
+/* 小屏设备 */
+@media (max-width: 479px) {
+  .setting-item {
+    @apply space-y-2;
+  }
+
+  .setting-button,
+  .setting-button-secondary,
+  .setting-button-ghost,
+  .setting-button-destructive {
+    @apply px-2 py-1.5 text-xs;
+  }
+}
+
+/* ============================================================================
+   主题适配
+   ============================================================================ */
+
+/* 深色模式特定样式 */
+@media (prefers-color-scheme: dark) {
+  .setting-input:disabled,
+  .setting-select:disabled,
+  .setting-textarea:disabled {
+    @apply opacity-60;
+  }
+
+  .setting-toggle::after {
+    @apply bg-white;
+  }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+  .setting-input,
+  .setting-select,
+  .setting-textarea {
+    @apply border-2;
+  }
+
+  .setting-button,
+  .setting-button-secondary {
+    @apply border-2 border-foreground;
+  }
+}
+
+/* 减少动画 */
+@media (prefers-reduced-motion: reduce) {
+  .setting-enter,
+  .setting-enter-left,
+  .setting-enter-right,
+  .setting-enter-scale {
+    animation: none;
+    @apply opacity-100 translate-x-0 translate-y-0 scale-100;
+  }
+
+  .setting-hover-lift {
+    transition: none;
+  }
+
+  .setting-hover-lift:hover {
+    @apply transform-none;
+  }
+}
+
+/* ============================================================================
+   实用类
+   ============================================================================ */
+
+/* 快速间距 */
+.setting-gap-sm {
+  @apply space-y-2;
+}
+.setting-gap-md {
+  @apply space-y-4;
+}
+.setting-gap-lg {
+  @apply space-y-6;
+}
+.setting-gap-xl {
+  @apply space-y-8;
+}
+
+/* 快速字体大小 */
+.setting-text-xs {
+  @apply text-xs;
+}
+.setting-text-sm {
+  @apply text-sm;
+}
+.setting-text-md {
+  @apply text-base;
+}
+.setting-text-lg {
+  @apply text-lg;
+}
+
+/* 快速颜色 */
+.setting-text-primary {
+  @apply text-foreground;
+}
+.setting-text-secondary {
+  @apply text-muted-foreground;
+}
+.setting-text-success {
+  @apply text-green-600 dark:text-green-400;
+}
+.setting-text-warning {
+  @apply text-yellow-600 dark:text-yellow-400;
+}
+.setting-text-error {
+  @apply text-destructive;
+}
+
+/* 快速背景 */
+.setting-bg-primary {
+  @apply bg-primary text-primary-foreground;
+}
+.setting-bg-secondary {
+  @apply bg-secondary text-secondary-foreground;
+}
+.setting-bg-success {
+  @apply bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-200;
+}
+.setting-bg-warning {
+  @apply bg-yellow-100 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-200;
+}
+.setting-bg-error {
+  @apply bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-200;
+}
+
+/* 快速边框 */
+.setting-border-primary {
+  @apply border border-border;
+}
+.setting-border-success {
+  @apply border border-green-300 dark:border-green-700;
+}
+.setting-border-warning {
+  @apply border border-yellow-300 dark:border-yellow-700;
+}
+.setting-border-error {
+  @apply border border-red-300 dark:border-red-700;
+}

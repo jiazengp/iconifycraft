@@ -1,0 +1,52 @@
+/* 进度条样式 - NProgress */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: rgb(59 130 246); /* 蓝色主色调 */
+  opacity: 1;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+/* Light mode */
+:root #nprogress .bar {
+  background: rgb(37 99 235); /* 深蓝色 */
+}
+
+/* Dark mode */
+.dark #nprogress .bar {
+  background: rgb(96 165 250); /* 亮蓝色 */
+}
+
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow:
+    0 0 10px rgba(59, 130, 246, 0.4),
+    0 0 5px rgba(59, 130, 246, 0.6);
+  opacity: 1;
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Light mode peg */
+:root #nprogress .peg {
+  box-shadow:
+    0 0 10px rgba(37, 99, 235, 0.4),
+    0 0 5px rgba(37, 99, 235, 0.6);
+}
+
+/* Dark mode peg */
+.dark #nprogress .peg {
+  box-shadow:
+    0 0 10px rgba(96, 165, 250, 0.4),
+    0 0 5px rgba(96, 165, 250, 0.6);
+}

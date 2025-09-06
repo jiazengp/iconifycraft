@@ -1,0 +1,231 @@
+/* 基础动画定义 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  43% {
+    transform: translateY(-8px);
+  }
+  70% {
+    transform: translateY(-4px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 页面模块的渐入动画系统 */
+@keyframes slide-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 从左侧滑入的变体 */
+@keyframes slide-enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 从右侧滑入的变体 */
+@keyframes slide-enter-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 缩放入场动画 */
+@keyframes slide-enter-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Dynamic Island 动画 */
+@keyframes dynamic-island-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+}
+
+/* Toast 动画 */
+@keyframes toast-enter {
+  from {
+    transform: translateX(calc(100% + 20px)) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-exit {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(calc(100% + 20px)) scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes toast-swipe-out {
+  to {
+    transform: translateX(calc(var(--swipe-amount, 0px) + 100%));
+    opacity: 0;
+  }
+}
+
+/* 图标动画 */
+@keyframes icon-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 成功图标特殊动画 */
+@keyframes success-bounce {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 错误图标摇摆动画 */
+@keyframes error-shake {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1) translateX(-2px);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1) translateX(2px);
+  }
+  60% {
+    transform: scale(1) translateX(-1px);
+  }
+  80% {
+    transform: scale(1) translateX(1px);
+  }
+  to {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 内容进入动画 */
+@keyframes content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

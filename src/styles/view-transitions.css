@@ -1,0 +1,150 @@
+/* View Transitions API - 简洁优雅的样式 */
+
+/* 基础设置 */
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-group(root) {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 实例网格容器的过渡 */
+.instances-grid {
+  view-transition-name: instances-grid;
+}
+
+::view-transition-old(instances-grid),
+::view-transition-new(instances-grid) {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(instances-grid) {
+  animation-name: fade-out-elegant;
+}
+
+::view-transition-new(instances-grid) {
+  animation-name: fade-in-elegant;
+}
+
+/* 优雅的过渡动画 */
+@keyframes fade-out-elegant {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96) translateY(-8px);
+  }
+}
+
+@keyframes fade-in-elegant {
+  from {
+    opacity: 0;
+    transform: scale(1.04) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 搜索过渡 - 优雅效果 */
+html[data-transition='search'] {
+  ::view-transition-old(instances-grid) {
+    animation: search-out-elegant 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ::view-transition-new(instances-grid) {
+    animation: search-in-elegant 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* 筛选过渡 - 平滑效果 */
+html[data-transition='filter'] {
+  ::view-transition-old(instances-grid) {
+    animation: filter-out-elegant 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ::view-transition-new(instances-grid) {
+    animation: filter-in-elegant 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@keyframes search-out-elegant {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes search-in-elegant {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes filter-out-elegant {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+}
+
+@keyframes filter-in-elegant {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 减少动画偏好支持 */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*) {
+    animation-duration: 1ms !important;
+  }
+}
+
+/* 主题切换动画 - 圆形展开效果 */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root),
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root),
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  ::view-transition-group(*) {
+    animation-duration: 200ms;
+  }
+}
